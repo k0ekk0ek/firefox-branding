@@ -42,3 +42,6 @@ else
   bail "Iceweasel not installed"
 fi
 
+
+# Verify version is supported by script
+
