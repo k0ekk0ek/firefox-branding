@@ -1,8 +1,10 @@
 # divert
-debian/branding/default16.png usr/share/iceweasel/chrome/icons/default/
-debian/branding/default32.png usr/share/iceweasel/chrome/icons/default/
-debian/branding/default48.png usr/share/iceweasel/chrome/icons/default/
-debian/branding/mozicon128.png usr/share/iceweasel/icons/
+debian/branding/default16.png usr/share/iceweasel/chrome/icons/default/default16.png
+debian/branding/default32.png usr/share/iceweasel/chrome/icons/default/default32.png
+debian/branding/default48.png usr/share/iceweasel/chrome/icons/default/default48.png
+debian/branding/mozicon128.png usr/share/iceweasel/icons/mozicon128.png
+debian/browser.jar /usr/share/iceweasel/chrome/browser.jar
+debian/en-US.jar /usr/share/iceweasel/chrome/en-US.jar
 # /divert
-debian/firefox.xpm usr/share/pixmaps/
-debian/firefox.desktop usr/share/applications
+debian/firefox.xpm /usr/share/pixmaps/
+debian/firefox.desktop /usr/share/applications
