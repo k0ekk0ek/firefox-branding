@@ -1,0 +1,15 @@
+Source: firefox-branding
+Section: web
+Priority: extra
+Maintainer: Jeroen Koekkoek <jeroen@koekkoek.nl>
+Build-Depends: debhelper (>= 8.0.0), zip, unzip
+Standards-Version: 3.9.2
+Vcs-Git: git://github.com/k0ekk0ek/firefox-branding.git
+Vcs-Browser: https://github.com/k0ekk0ek/firefox-branding
+
+Package: firefox-branding
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, iceweasel (= ${binary:Version})
+Description: Package that ships the Firefox branding for Iceweasel
+ This package ships the Firefox branding bits for Iceweasel. If you remove
+ this package your user experience will become that of Iceweasel.

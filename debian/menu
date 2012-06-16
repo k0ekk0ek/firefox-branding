@@ -1,0 +1,5 @@
+?package(iceweasel):needs="x11" section="Applications/Network/Web Browsing" \
+        title="Firefox" \
+        longtitle="Firefox Web Browser" \
+        icon="/usr/share/pixmaps/firefox.xpm" \
+        command="firefox"

@@ -1,0 +1,54 @@
+#!/usr/bin/make -f
+# This file was originally written by Joey Hess and Craig Small.
+# This file was modified by Jeroen Koekkoek for firefox-branding package.
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+override_dh_auto_clean:
+	rm -rf $(CURDIR)/debian/browser.jar \
+	       $(CURDIR)/debian/browser.jar.d \
+	       $(CURDIR)/debian/en-US.jar \
+	       $(CURDIR)/debian/en-US.jar.d
+	dh $@
+
+override_dh_auto_build:
+	# Rebrand browser.jar
+	mkdir -p "$(CURDIR)/debian/browser.jar.d/content/branding"
+
+	cp $(CURDIR)/browser.jar $(CURDIR)/debian/browser.jar
+	cp $(CURDIR)/debian/branding/content/* \
+	   $(CURDIR)/debian/browser.jar.d/content/branding
+
+	cd $(CURDIR)/debian/browser.jar.d && \
+	zip -q -r $(CURDIR)/debian/browser.jar \
+		content/branding/*
+
+	# Rebrand en-US.jar
+	mkdir -p $(CURDIR)/debian/en-US.jar.d
+
+	cp $(CURDIR)/en-US.jar $(CURDIR)/debian/en-US.jar
+
+	unzip -q -d $(CURDIR)/debian/en-US.jar.d $(CURDIR)/debian/en-US.jar \
+		locale/branding/brand.dtd \
+		locale/branding/brand.properties
+
+	for f in $(CURDIR)/debian/en-US.jar.d/locale/branding/*; do \
+		sed -i "s/Iceweasel/Firefox/" $$f; \
+	done
+
+	cd $(CURDIR)/debian/en-US.jar.d && \
+	zip -q -r $(CURDIR)/debian/en-US.jar \
+		locale/branding/*
+
+override_dh_auto_install:
+	# Rebranded browser.jar
+	cp $(CURDIR)/debian/browser.jar \
+	   $(CURDIR)/debian/firefox-branding/usr/share/iceweasel/chrome
+
+	# Rebranded en-US.jar
+	cp $(CURDIR)/debian/en-US.jar \
+	   $(CURDIR)/debian/firefox-branding/usr/share/iceweasel/chrome
+
+%:
+	dh $@ 
