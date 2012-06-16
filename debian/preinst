@@ -13,63 +13,39 @@ case "$1" in
     install|upgrade)
     # mozicon16.xpm
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/icons/mozicon16.xpm.orig \
+      --divert /usr/share/iceweasel/icons/mozicon16.xpm.real \
       --rename /usr/share/iceweasel/icons/mozicon16.xpm
     # mozicon50.xpm
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/icons/mozicon50.xpm.orig \
+      --divert /usr/share/iceweasel/icons/mozicon50.xpm.real \
       --rename /usr/share/iceweasel/icons/mozicon50.xpm
     # mozicon128.png
-    dpkg-divert --pacakge firefox-branding \
-      --divert /usr/share/iceweasel/icons/mozicon128.png.orig \
+    dpkg-divert --package firefox-branding \
+      --divert /usr/share/iceweasel/icons/mozicon128.png.real \
       --rename /usr/share/iceweasel/icons/mozicon128.png
     # default16.png
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/chrome/icons/default/default16.png.orig \
+      --divert /usr/share/iceweasel/chrome/icons/default/default16.png.real \
       --rename /usr/share/iceweasel/chrome/icons/default/default16.png
     # default32.png
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/chrome/icons/default/default32.png.orig \
+      --divert /usr/share/iceweasel/chrome/icons/default/default32.png.real \
       --rename /usr/share/iceweasel/chrome/icons/default/default32.png
     # default48.png
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/chrome/icons/default/default48.png.orig \
+      --divert /usr/share/iceweasel/chrome/icons/default/default48.png.real \
       --rename /usr/share/iceweasel/chrome/icons/default/default48.png
     # browser.jar
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/chrome/browser.jar.orig \
+      --divert /usr/share/iceweasel/chrome/browser.jar.real \
       --rename /usr/share/iceweasel/chrome/browser.jar
     # en-US.jar
     dpkg-divert --package firefox-branding \
-      --divert /usr/share/iceweasel/chrome/en-US.jar.orig \
+      --divert /usr/share/iceweasel/chrome/en-US.jar.real \
       --rename /usr/share/iceweasel/chrome/en-US.jar
     ;;
 
     abort-upgrade)
-    # mozicon16.xpm
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/icons/mozicon16.xpm
-    # mozicon50.xpm
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/icons/mozicon50.xpm
-    # mozicon128.png
-    dpkg-divert --pacakge firefox-branding --rename \
-      --remove /usr/share/iceweasel/icons/mozicon128.png
-    # default16.png
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/chrome/icons/default/default16.png
-    # default32.png
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/chrome/icons/default/default32.png
-    # default48.png
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/chrome/icons/default/default48.png
-    # browser.jar
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/chrome/browser.jar
-    # en-US.jar
-    dpkg-divert --package firefox-branding --rename \
-      --remove /usr/share/iceweasel/chrome/en-US.jar
     ;;
 
     *)

@@ -1,1 +1,6 @@
-Script that installs official Firefox branding for Iceweasel in Debian GNU/Linux
+Package that ships official Firefox branding bits for Iceweasel in Debian GNU/Linux
+
+1. Place browser.jar and en-US.jar files in the root.
+2. Issue dpkg-buildpackage -b
+3. Remove .mozilla directory from your home folder
+4. Launch Firefox after doing a new login

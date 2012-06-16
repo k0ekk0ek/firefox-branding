@@ -19,6 +19,12 @@ override_dh_auto_build:
 	cp $(CURDIR)/browser.jar $(CURDIR)/debian/browser.jar
 	cp $(CURDIR)/debian/branding/content/* \
 	   $(CURDIR)/debian/browser.jar.d/content/branding
+	cp $(CURDIR)/debian/branding/default16.png \
+	   $(CURDIR)/debian/browser.jar.d/content/branding/icon16.png
+	cp $(CURDIR)/debian/branding/default48.png \
+	   $(CURDIR)/debian/browser.jar.d/content/branding/icon48.png
+	cp $(CURDIR)/debian/branding/icon64.png \
+	   $(CURDIR)/debian/browser.jar.d/content/branding/icon64.png
 
 	cd $(CURDIR)/debian/browser.jar.d && \
 	zip -q -r $(CURDIR)/debian/browser.jar \
@@ -42,13 +48,16 @@ override_dh_auto_build:
 		locale/branding/*
 
 override_dh_auto_install:
-	# Rebranded browser.jar
-	cp $(CURDIR)/debian/browser.jar \
-	   $(CURDIR)/debian/firefox-branding/usr/share/iceweasel/chrome
-
-	# Rebranded en-US.jar
-	cp $(CURDIR)/debian/en-US.jar \
-	   $(CURDIR)/debian/firefox-branding/usr/share/iceweasel/chrome
+	cp $(CURDIR)/debian/branding/default16.png \
+	   $(CURDIR)/debian/firefox-branding/usr/share/icons/hicolor/16x16/apps/firefox.png
+	cp $(CURDIR)/debian/branding/default32.png \
+	   $(CURDIR)/debian/firefox-branding/usr/share/icons/hicolor/32x32/apps/firefox.png
+	cp $(CURDIR)/debian/branding/default48.png \
+	   $(CURDIR)/debian/firefox-branding/usr/share/icons/hicolor/48x48/apps/firefox.png
+	cp $(CURDIR)/debian/branding/icon64.png \
+	   $(CURDIR)/debian/firefox-branding/usr/share/icons/hicolor/64x64/apps/firefox.png
+	cp $(CURDIR)/debian/branding/mozicon128.png \
+	   $(CURDIR)/debian/firefox-branding/usr/share/icons/hicolor/128x128/apps/firefox.png
 
 %:
 	dh $@ 
