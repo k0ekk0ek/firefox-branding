@@ -9,7 +9,7 @@ Vcs-Browser: https://github.com/k0ekk0ek/firefox-branding
 
 Package: firefox-branding
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, iceweasel (= ${binary:Version})
+Depends: ${shlibs:Depends}, ${misc:Depends}, iceweasel
 Description: Package that ships the Firefox branding for Iceweasel
  This package ships the Firefox branding bits for Iceweasel. If you remove
  this package your user experience will become that of Iceweasel.
