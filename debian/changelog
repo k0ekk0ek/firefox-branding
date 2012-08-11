@@ -1,5 +1,5 @@
-firefox-branding (10.0.5esr-1) unstable; urgency=low
+firefox-branding (1.0-1) unstable; urgency=low
 
   * Initial release
 
- -- Jeroen Koekkoek <jeroen@koekkoek.nl>  Sat, 16 Jun 2012 10:33:48 +0200
+ -- Jeroen Koekkoek <jeroen@koekkoek.nl>  Sat, 11 Aug 2012 10:57:12 +0200
